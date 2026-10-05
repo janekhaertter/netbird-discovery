@@ -15,7 +15,11 @@ Show this checklist and tick items off as you go:
 
 ### 1. Access
 
-Open with one line on what will happen (a look at their setup, a few questions, then a recommendation). Then ask directly:
+Start with this introduction, translated into the person's language. Write it as normal text at the top of your first reply, before any question or multiple-choice tool:
+
+> I'll help you work out how NetBird fits your organisation. I'll ask a few questions about your setup, suggest an architecture and recommend next steps.
+
+Then ask directly:
 
 > Can you share any documentation or config, such as architecture docs, NixOS configs, Helm charts, Ansible playbooks, Terraform or deploy scripts? Or should I start the interview from scratch?
 
