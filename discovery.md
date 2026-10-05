@@ -15,19 +15,19 @@ Show this checklist and tick items off as you go:
 
 ### 1. Access
 
-Start with one line on what will happen (a look at their setup, a few questions, then a recommendation) and one line saying nothing will be changed or sent anywhere. Then offer the options that actually work in your environment:
+Open with one line on what will happen (a look at their setup, a few questions, then a recommendation). Then ask directly:
 
-- **A. Local files:** if you can read files (Claude Code, Codex, Cursor and similar), ask which directory holds their infrastructure: Ansible, NixOS, Terraform, Kubernetes or Helm, Compose, deploy scripts, internal docs.
-- **B. Connected tools:** if you have connectors (Drive, Notion, Confluence…), read only the pages they name.
-- **C. Paste or upload:** architecture docs, an inventory, a Terraform providers block, a NixOS host config, a network diagram. Remind them to remove secrets first.
-- **D. Run locally:** if their material is in a repository you can't reach, suggest they open a coding agent in that repository and say `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`. If they choose this, stop here.
-- **E. Questions only.**
+> Can you share any documentation or config, such as architecture docs, NixOS configs, Helm charts, Ansible playbooks, Terraform or deploy scripts? Or should I start the interview from scratch?
+
+Adjust the wording to what you can actually do. If you can read local files, ask which directory to look in. If you have connectors (Drive, Notion, Confluence…), offer to read the pages they name. Otherwise ask them to paste or upload material, with secrets removed. Don't present this as a menu of options.
+
+If their material lives in a repository you can't reach, mention once that they'll get a better result by opening a coding agent in that repository and saying `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`.
 
 In the same message, ask how many questions they have time for: **5**, **10** or **15**. Stick to that number for the rest of the session.
 
 ### 2. Recon
 
-Skip this step for option E. Start broad (file tree, READMEs, `docs/`), then read only what matters. Skip `node_modules`, `vendor`, `.git`, build output and lockfiles. Look for:
+Skip this step if they chose to start from scratch. Start broad (file tree, READMEs, `docs/`), then read only what matters. Skip `node_modules`, `vendor`, `.git`, build output and lockfiles. Look for:
 
 - **Identity provider.** Okta, Entra ID (`azuread`, `login.microsoftonline.com`) and Google Workspace work out of the box, and user sync is documented for them. Keycloak, Authentik, Zitadel, Pocket ID and Dex usually mean a self-hosting culture. For JumpCloud, Duo, Auth0 or Cognito, check the SSO docs. For on-prem Active Directory, NetBird can use AD FS behind a Web Application Proxy (WAP), which exposes OIDC without putting AD FS on the internet (documented for self-hosted; the Duo Authentication Proxy can't act as an IdP). If their domain-joined clients need file shares, DFS or domain login over NetBird, point to the Active Directory use case.
 - **Existing VPN.** For Tailscale or Headscale, map their ACLs onto NetBird groups and policies. For hand-rolled WireGuard, the hub hosts become routing peers. Moving off OpenVPN ends certificate management. For ZeroTier or appliance VPNs (AnyConnect, GlobalProtect, Fortinet, IPsec), ask when the contract renews. For Teleport, Boundary, cloudflared or Zscaler, ask which use cases overlap.
