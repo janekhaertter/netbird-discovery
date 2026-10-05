@@ -43,6 +43,7 @@ Show an evidence table, `fact | confidence | source`, containing only facts that
 **Question budget.** Ask at most the number of questions they picked (5, 10 or 15). Every numbered question below counts, follow-ups included in their parent, and so does confirming something you found in the files. The budget question doesn't count. Work down the list in order, skipping anything the evidence or earlier answers already cover. For anything left unasked, make a sensible assumption, mark it as an assumption in the summary, and list it under open questions in the sales email.
 
 **How to ask.**
+- **Every question needs a way to say no.** Single-choice questions already have a "No" or "not needed" answer. For multi-select questions, "Skip if none apply" is part of the question text. Never drop those answers, and never add a fifth one: many multiple-choice tools only show four.
 - **Ask exactly the text in the quote** and offer exactly the listed answers, translated into the person's language. Don't add prefixes, labels, explanations or extra options. If you have a multiple-choice tool, put the answers in it as they are; it adds a free-text field itself. Without one, list them as a short bulleted list.
 - **Lines marked "Internal:" are for you only.** Never show them, paraphrase them, or mention budgets, slots or rules.
 - **Pick one variant.** Where a question has variants, ask only the one that matches what you already know. Never show more than one.
@@ -58,7 +59,7 @@ Show an evidence table, `fact | confidence | source`, containing only facts that
 - Yes, self-hosted
 
 Follow-up, if yes (several answers allowed):
-> What's missing that brought you here?
+> What's missing that brought you here? Skip if nothing specific.
 - User and group sync (SCIM)
 - Audit or traffic logs
 - Device compliance (MDM/EDR) or device approval
@@ -98,14 +99,14 @@ Internal: Ask for an open number in the follow-up; don't invent ranges.
 **5. Plan check**
 
 Variant for Cloud (several answers allowed):
-> Do you need any of these?
+> Do you need any of these? Skip if none apply.
 - Connection logs or SIEM streaming
 - Only managed or compliant devices (MDM/EDR, posture checks)
 - Approving new devices before they join
 - Payment by invoice, a custom contract or SLA
 
 Variant for self-hosted (several answers allowed):
-> Do you need any of these?
+> Do you need any of these? Skip if none apply.
 - High availability
 - Connection logs or SIEM streaming
 - Only managed or compliant devices (MDM/EDR)
@@ -126,8 +127,8 @@ Internal: Don't ask whether SSO alone is enough. If their IdP supports it, recom
 > Should only managed or compliant devices get access?
 - Yes, and we use an MDM or EDR
 - Yes, but we don't have an MDM or EDR yet
-- Mixed: some managed devices, some BYOD
-- No, devices aren't managed
+- Partly: some devices are BYOD
+- No, not needed
 
 Follow-up, if they use one:
 > Which MDM or EDR do you use?
@@ -270,7 +271,7 @@ Follow-up:
 - Both
 
 **M5. Tools** (several answers allowed)
-> Which tools does NetBird need to fit into?
+> Which tools does NetBird need to fit into? Skip if none apply.
 - RMM (for example NinjaOne, Datto, Acronis)
 - PSA (for example ConnectWise, Autotask)
 - MDM or EDR
