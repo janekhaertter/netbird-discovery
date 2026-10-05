@@ -12,19 +12,17 @@ Steps: 1. Access, 2. Recon, 3. Interview, 4. Assess, 5. Report, 6. Wrap up, 7. V
 
 ### 1. Access
 
-Start with this introduction, translated into the person's language. Write it as normal text at the top of your first reply, before any question or multiple-choice tool:
+The opening is two messages, always in this order.
+
+**First message: plain text only.** Don't use a multiple-choice or question tool. Send the introduction and the files question, translated into the person's language, then stop and wait for the reply:
 
 > I'll help you work out how NetBird fits your organisation. I'll ask a few questions about your setup, suggest an architecture and recommend next steps.
-
-Then ask directly:
-
+>
 > Can you share any documentation or config, such as architecture docs, NixOS configs, Helm charts, Ansible playbooks, Terraform or deploy scripts? Or should I start the interview from scratch?
 
-Adjust the wording to what you can actually do. If you can read local files, ask which directory to look in. If you have connectors (Drive, Notion, Confluence…), offer to read the pages they name. Otherwise ask them to paste or upload material, with secrets removed. Don't present this as a menu of options.
+Adjust the second paragraph to what you can actually do. If you can read local files, ask which directory to look in. If you have connectors (Drive, Notion, Confluence…), offer to read the pages they name. Otherwise ask them to paste or upload material, with secrets removed. If their material lives in a repository you can't reach, add one sentence saying they'll get a better result by opening a coding agent in that repository and saying `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`. Never assume they have nothing to share; wait for them to say so.
 
-If their material lives in a repository you can't reach, mention once that they'll get a better result by opening a coding agent in that repository and saying `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`.
-
-In the same message, ask: **"How many questions do you have time for?"** 5 · 10 · 15. Stick to that number for the rest of the session.
+**Second message**, once they've answered (and after reading their material, if they shared any): ask **"How many questions do you have time for?"** 5 · 10 · 15. You can use a multiple-choice tool for this one. Stick to that number for the rest of the session.
 
 ### 2. Recon
 
