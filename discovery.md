@@ -38,7 +38,7 @@ Skip this step if they chose to start from scratch. Start broad (file tree, READ
 - **Fleet and OS mix.** Count Ansible hosts per group, `nixosConfigurations`, Terraform `count`/`for_each`, node pools and clusters. Note Windows, macOS (`darwinConfigurations`, Jamf), Linux, and network gear (MikroTik, OPNsense, pfSense, OpenWrt, Synology, TrueNAS, Proxmox). Servers say nothing about laptops, so always ask about those.
 - **Topology.** Note VPC, subnet and LAN ranges, and flag overlaps. Note multiple clouds or sites, private services (these become network resources) and bastion hosts. If SSH, RDP or admin ports are open to `0.0.0.0/0`, mention it once.
 - **MDM and EDR.** CrowdStrike, SentinelOne, Huntress, FleetDM and Intune have **compliance integrations**: access can depend on the device being managed. Jamf Pro, Kandji, Intune and Windows GPO can **deploy the client**, which isn't the same as gating access. For anything else, check the EDR docs page; if it isn't listed, it's a feature request for sales.
-- **Constraints.** Note air gaps, data residency, compliance frameworks (SOC 2, ISO 27001, HIPAA, PCI, NIS2, DORA, BSI), and SIEMs (Splunk, Datadog, Elastic, Sentinel), since a SIEM implies event streaming.
+- **Constraints.** Note data residency, compliance frameworks (SOC 2, ISO 27001, HIPAA, PCI, NIS2, DORA, BSI), and SIEMs (Splunk, Datadog, Elastic, Sentinel), since a SIEM implies event streaming.
 - **Existing NetBird.** Look for the NetBird Terraform provider, `community.ansible_netbird`, the Helm chart or operator, `services.netbird`, `NB_SETUP_KEY` or `NB_MANAGEMENT_URL`. A custom management URL means self-hosted; none, or `api.netbird.io`, means Cloud.
 
 Show an evidence table, `fact | confidence | source`, containing only facts that change the recommendation.
@@ -54,7 +54,7 @@ You can only adapt the wording when you're confirming something you found in the
 1. **"Are you already using NetBird?"** No · Yes, NetBird Cloud · Yes, self-hosted
    ↳ If yes: "What's missing that brought you here?" User and group sync (SCIM) · Audit or traffic logs · Device compliance (MDM/EDR) or device approval · High availability
    *Ask this first, even if the files show nothing. For existing users, treat the rest as an upgrade check focused on the gap.*
-2. **"Does NetBird need to run on your own infrastructure?"** No, a managed cloud service is fine · Preferred, but not required · Yes, required (regulation, data residency or policy) · Yes, and fully air-gapped
+2. **"Does NetBird need to run on your own infrastructure?"** No, a managed cloud service is fine · Preferred, but not required · Yes, required (regulation, data residency or policy)
    ↳ If the cloud is acceptable: "Are there restrictions on where it may be hosted, such as country, region or subprocessors?"
 3. **"Who is this for, and roughly how many users?"** Our own organisation, 1–5 users · Our own organisation, 6–50 users · Our own organisation, more than 50 users · Our customers (we're an MSP)
    ↳ If self-hosting: "Roughly how many devices?" Up to 500 · More than 500
@@ -112,7 +112,7 @@ Recommend Cloud unless there's a hard requirement to self-host. If self-hosting 
 | Cloud Enterprise, procurement needs, large rollout | sales@netbird.io | A Team or Business trial in parallel |
 | Self-hosted Community Edition | Self-hosted quickstart | Ansible collection or Terraform provider |
 | Self-hosted Commercial Starter | Community Edition now, then a license from https://licensing.netbird.io (upgrades in place) | High-availability docs |
-| Self-hosted Enterprise, or air-gapped with commercial needs | sales@netbird.io for an assisted proof of concept | Community Edition meanwhile (migrates in place) |
+| Self-hosted Enterprise | sales@netbird.io for an assisted proof of concept | Community Edition meanwhile (migrates in place) |
 | MSP | msp@netbird.io | MSP portal docs |
 | Requirement not met | Say so plainly; sales@netbird.io if it's a dealbreaker | Closest documented workaround |
 
@@ -148,7 +148,7 @@ If you can write files, offer to save the report as `netbird-discovery-report.md
 
 **Sales email: only when sales is needed.** Draft one only when the primary next step goes through sales:
 - Cloud with more than 50 users, or Cloud Enterprise needs (invoicing, custom MSA or SLA, DORA, priority support)
-- self-hosted Enterprise, or air-gapped with commercial features
+- self-hosted Enterprise
 - procurement needs (DPA, security questionnaire, custom contract)
 - a dealbreaker requirement NetBird may not meet
 - MSPs: address it to msp@netbird.io
