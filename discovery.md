@@ -23,7 +23,7 @@ Adjust the wording to what you can actually do. If you can read local files, ask
 
 If their material lives in a repository you can't reach, mention once that they'll get a better result by opening a coding agent in that repository and saying `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`.
 
-In the same message, ask how many questions they have time for: **5**, **10** or **15**. Stick to that number for the rest of the session.
+In the same message, ask: **"How many questions do you have time for?"** 5 · 10 · 15. Stick to that number for the rest of the session.
 
 ### 2. Recon
 
@@ -43,23 +43,40 @@ Show an evidence table, `fact | confidence | source`, containing only facts that
 
 **Question budget.** Ask at most the number of questions they picked (5, 10 or 15). Every question you ask counts, including confirmations of what you found in the files; a question with several parts still counts as one. The budget question itself doesn't count. Work down the list below in order, skipping anything the evidence or their earlier answers already cover, until the budget runs out. For anything left unasked, make a sensible assumption and list it under open questions in the report. Finish by telling them which topics you didn't get to.
 
-Ask three or four questions per turn. Turn uncertain findings into confirmations ("Your Terraform configures Okta. Is that your workforce IdP?"). Use a multiple-choice tool if you have one. Accept "don't know" and record it as an open question. Where an answer contradicts the files, go with the answer.
+Ask three or four questions per turn. **Use the wording and answer options below as written**, translated into the person's language. If you have a multiple-choice tool, use the options exactly as listed; it adds a free-text answer itself. Without one, list the options inline. A follow-up (↳) is part of the same question and only asked when it applies. Accept "don't know" and record it as an open question. Where an answer contradicts the files, go with the answer.
 
-1. **Already using NetBird?** Ask this first, even if the files show nothing. If yes: Cloud or self-hosted, which plan or edition, and which missing feature or dealbreaker brought them here (SCIM, audit logs, MDM filtering and device approval are common). For existing users this is mostly an upgrade check, so focus on the gap.
-2. **Hosting:** Must NetBird run on your own infrastructure? Is that a hard requirement (air gap, residency, regulation, policy) or a preference? Where may the control plane, relays and backups run, and are third-party subprocessors acceptable?
-3. **Scale and tenancy:** Is this for your own organisation or for customers (MSP)? Roughly how many users and devices, and how many users are active in a typical month compared with named accounts? When you offer ranges, line them up with the plan cut-offs: users **1–5** (Cloud Free), **6–50**, **51+** (Cloud: bring in sales; self-hosted: beyond Commercial Starter), and for self-hosted, devices **up to 500** or **more than 500**. MSPs: how many customers?
-4. **Identity:** Which IdP do you use? Don't ask whether SSO alone is enough. If their IdP supports it, recommend syncing users and groups automatically (SCIM or IdP sync), so that onboarding, offboarding and group-based access policies follow the IdP. Leave sync out only for very small teams on social logins, or an IdP with no documented sync, and say why.
-5. **Devices:** Should access depend on the device being managed or compliant? Which MDM and EDR do you use? Which devices are unmanaged or BYOD, and what has to be enforced on them?
-6. **Production blockers:** What would make this unusable in production, even if a basic demo works?
-7. **Topology and use cases:** Where are your people and resources? For example offices or sites, remote and work-from-home users, data centres, cloud providers or regions, branch or edge locations, and whether any address ranges overlap. What needs to connect to what: remote access, server to server, site to site, Kubernetes, CI, IoT or edge, SSH or RDP, exposing internal services?
-8. **Current solution:** What do you use today, what's wrong with it, and are you locked into a contract?
-9. **Third-party access:** Do contractors, suppliers or technicians need access? Should it be clientless, time-limited or across tenants?
-10. **Availability:** What has to keep working if the control plane, a routing peer or a site fails? For self-hosted, do you need high availability?
-11. **Audit:** Do you need traffic logs or SIEM streaming? Which compliance frameworks apply?
-12. **Source IP:** Do any destination systems need to see the user's original IP, for example for firewall rules, software distribution or geo-routing? If so, check the docs on masquerading and routing before recommending a network design.
-13. **Timeline:** When do you want to be running? Is there a renewal or audit deadline?
-14. **Buying:** Who decides, and what does the purchase process look like (DPA, security questionnaire, invoicing, custom contract)? Would you rather run a self-serve trial or a guided proof of concept?
-15. **Alternatives:** Are you evaluating other zero trust or VPN products?
+You can only adapt the wording when you're confirming something you found in the files: "Your Terraform configures Okta. Is that the identity provider your staff sign in with?" (Yes · No, it's something else).
+
+1. **"Are you already using NetBird?"** No · Yes, NetBird Cloud · Yes, self-hosted
+   ↳ If yes: "What's missing that brought you here?" User and group sync (SCIM) · Audit or traffic logs · Device compliance (MDM/EDR) or device approval · High availability
+   *Ask this first, even if the files show nothing. For existing users, treat the rest as an upgrade check focused on the gap.*
+2. **"Does NetBird need to run on your own infrastructure?"** No, a managed cloud service is fine · Preferred, but not required · Yes, required (regulation, data residency or policy) · Yes, and fully air-gapped
+   ↳ If the cloud is acceptable: "Are there restrictions on where it may be hosted, such as country, region or subprocessors?"
+3. **"Who is this for, and roughly how many users?"** Our own organisation, 1–5 users · Our own organisation, 6–50 users · Our own organisation, more than 50 users · Our customers (we're an MSP)
+   ↳ If self-hosting: "Roughly how many devices?" Up to 500 · More than 500
+   ↳ If more than 50 users: "About how many of them are active in a typical month?"
+   ↳ If MSP: "How many customers would use it?"
+4. **"Which identity provider do your staff sign in with?"** Microsoft Entra ID · Okta · Google Workspace · Other (for example Keycloak, Authentik, JumpCloud, AD FS)
+   *Don't ask whether SSO alone is enough. If their IdP supports it, recommend syncing users and groups automatically (SCIM or IdP sync), so that onboarding, offboarding and group-based access policies follow the IdP. Leave sync out only for very small teams on social logins, or an IdP with no documented sync, and say why.*
+5. **"Should only managed or compliant devices get access?"** Yes, and we use an MDM or EDR · Yes, but we don't have an MDM or EDR yet · Mixed: some managed devices, some BYOD · No, devices aren't managed
+   ↳ If they use one: "Which MDM or EDR?"
+6. **"What would make NetBird unusable for you in production, even if a quick demo works?"** (free text)
+7. **"What needs to connect?"** (several allowed) Remote or work-from-home users to internal apps · Offices or sites to each other · Cloud and on-premises networks · Servers, Kubernetes or CI to each other
+   ↳ "How many offices, sites, clouds or regions are involved, and do any IP ranges overlap?"
+8. **"What do you use today?"** Nothing yet · A traditional VPN (OpenVPN, WireGuard, firewall or appliance VPN) · Tailscale, ZeroTier or similar · A zero trust or access proxy (for example Zscaler, Cloudflare, Teleport)
+   ↳ "What's the main reason to change, and when does the current contract end?"
+9. **"Do contractors, suppliers or technicians need access?"** No · Yes, and they can install the NetBird client · Yes, but without installing anything · Yes, and only for a limited time
+10. **"What has to keep working if a server, a site or the control plane fails?"** Short interruptions are fine · Existing connections must stay up · No downtime at all, including during upgrades
+11. **"Do you need audit evidence or log export?"** (several allowed) Admin audit log · Connection or traffic logs · Streaming to a SIEM · Not needed
+    ↳ If any: "Which compliance frameworks apply?"
+12. **"Do any systems need to see the user's real source IP, for example for firewall rules, software distribution or geo-routing?"** No · Yes · Not sure
+    *If yes, check the docs on masquerading and routing before you recommend a network design.*
+13. **"When do you want to be up and running?"** Within a month · Within 3 months · Later this year · Just exploring
+    ↳ "Is there a renewal or audit deadline?"
+14. **"How would you like to evaluate and buy?"** Self-serve trial, pay by card · Guided proof of concept · Through procurement (DPA, security questionnaire, invoice or contract)
+    ↳ If not self-serve: "Who signs off on the decision?"
+15. **"Are you comparing NetBird with other products?"** No · Yes
+    ↳ If yes: "Which ones?"
 
 ### 4. Assess
 
