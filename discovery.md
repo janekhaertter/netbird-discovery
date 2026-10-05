@@ -185,8 +185,14 @@ Don't draft one when they can do everything self-serve: Cloud Free, Team or Busi
 Make the email easy to send:
 - **To:** sales@netbird.io (or msp@netbird.io)
 - **Subject:** a single line, such as "NetBird for <company>: <Cloud Enterprise | self-hosted Enterprise | MSP>, ~<N> users"
-- **Body:** under 150 words, written as the person (not as you): who they are, what they want to solve, the recommended option, the deciding requirements, size, timeline, and the open questions for sales. Leave out internal hostnames, IP ranges and anything from secret files.
-- Show the email as plain text they can copy. Also add a `mailto:` link with the subject and body URL-encoded, so one click opens it in their mail client.
+- **Body**, written as the person (not as you):
+  1. Two sentences: who they are and what they want to solve.
+  2. **Every piece of information gathered in the session**, one short line per topic (topic: answer). That means every answer, including "don't know", every confirmed finding from their files, and anything they added after the summary. Don't drop or condense answers; sales shouldn't have to ask again.
+  3. The recommended option and plan, and the requirements that decided it.
+  4. Open questions for sales.
+
+  Leave out internal hostnames, IP ranges and anything from secret files.
+- Show the email as plain text they can copy. Also add a `mailto:` link with the subject and body URL-encoded, so one click opens it in their mail client. If the encoded link would be longer than about 1,800 characters, some mail clients cut it off. In that case, put only the subject in the link and tell them to paste the body.
 
 ### 7. Verify
 
