@@ -58,27 +58,31 @@ You can only adapt the wording when you're confirming something you found in the
 4. **"Roughly how many users?"** 1–5 · 6–50 · More than 50
    ↳ If self-hosting: "Roughly how many devices?" Up to 500 · More than 500
    ↳ If more than 50: "About how many of them are active in a typical month?"
-5. **"Which identity provider do your staff sign in with?"** Microsoft Entra ID · Okta · Google Workspace · Other (for example Keycloak, Authentik, JumpCloud, AD FS)
+5. **Plan check.** Always ask this, even when the budget is used up, and don't count it towards the budget. These features decide the plan or edition, so never assume the answer. **"Do you need any of these?"** (several allowed)
+   - Cloud: Connection logs or SIEM streaming · Only managed or compliant devices (MDM/EDR, posture checks) · Approving new devices before they join · Invoice payment, custom contract or SLA
+   - Self-hosted: High availability · Connection logs or SIEM streaming · Only managed or compliant devices (MDM/EDR) · Approving new devices before they join
+   *On Cloud, any of the first three means Business, and the last one means Enterprise. Self-hosted: high availability or device approval means Commercial Starter, while logs or MDM/EDR mean Enterprise. If they choose none, the lower plan stands. Skip later questions this already answers.*
+6. **"Which identity provider do your staff sign in with?"** Microsoft Entra ID · Okta · Google Workspace · Other (for example Keycloak, Authentik, JumpCloud, AD FS)
    *Don't ask whether SSO alone is enough. If their IdP supports it, recommend syncing users and groups automatically (SCIM or IdP sync), so that onboarding, offboarding and group-based access policies follow the IdP. Leave sync out only for very small teams on social logins, or an IdP with no documented sync, and say why.*
-6. **"Should only managed or compliant devices get access?"** Yes, and we use an MDM or EDR · Yes, but we don't have an MDM or EDR yet · Mixed: some managed devices, some BYOD · No, devices aren't managed
+7. **"Should only managed or compliant devices get access?"** Yes, and we use an MDM or EDR · Yes, but we don't have an MDM or EDR yet · Mixed: some managed devices, some BYOD · No, devices aren't managed
    ↳ If they use one: "Which MDM or EDR?"
-7. **"Is there anything NetBird must be able to do for it to be an option for you?"**
-8. **"What needs to connect?"** (several allowed) Remote or work-from-home users to internal apps · Offices or sites to each other · Cloud and on-premises networks · Servers, Kubernetes or CI to each other
+8. **"Is there anything NetBird must be able to do for it to be an option for you?"**
+9. **"What needs to connect?"** (several allowed) Remote or work-from-home users to internal apps · Offices or sites to each other · Cloud and on-premises networks · Servers, Kubernetes or CI to each other
    ↳ "How many offices, sites, clouds or regions are involved, and do any IP ranges overlap?"
-9. **"What do you use today?"** Nothing yet · A traditional VPN (OpenVPN, WireGuard, firewall or appliance VPN) · Tailscale, ZeroTier or similar · A zero trust or access proxy (for example Zscaler, Cloudflare, Teleport)
+10. **"What do you use today?"** Nothing yet · A traditional VPN (OpenVPN, WireGuard, firewall or appliance VPN) · Tailscale, ZeroTier or similar · A zero trust or access proxy (for example Zscaler, Cloudflare, Teleport)
    ↳ "What's the main reason to change, and when does the current contract end?"
-10. **"Do people outside your company, such as contractors or service technicians, need access too?"** No · Yes
+11. **"Do people outside your company, such as contractors or service technicians, need access too?"** No · Yes
     ↳ If yes: "Can they install an app on their device?" Yes · No · It varies
-11. **"How critical will NetBird be for your daily work?"** Helpful, a short outage is acceptable · Business-critical, it must always work
-12. **"Do you need audit evidence or log export?"** (several allowed) Admin audit log · Connection or traffic logs · Streaming to a SIEM · Not needed
+12. **"How critical will NetBird be for your daily work?"** Helpful, a short outage is acceptable · Business-critical, it must always work
+13. **"Do you need audit evidence or log export?"** (several allowed) Admin audit log · Connection or traffic logs · Streaming to a SIEM · Not needed
     ↳ If any: "Which compliance frameworks apply?"
-13. **"Do any systems need to see the user's real source IP, for example for firewall rules, software distribution or geo-routing?"** No · Yes · Not sure
+14. **"Do any systems need to see the user's real source IP, for example for firewall rules, software distribution or geo-routing?"** No · Yes · Not sure
     *If yes, check the docs on masquerading and routing before you recommend a network design.*
-14. **"When do you want to be up and running?"** Within a month · Within 3 months · Later this year · Just exploring
+15. **"When do you want to be up and running?"** Within a month · Within 3 months · Later this year · Just exploring
     ↳ "Is there a renewal or audit deadline?"
-15. **"How would you like to evaluate and buy?"** Self-serve trial, pay by card · Guided proof of concept · Through procurement (DPA, security questionnaire, invoice or contract)
+16. **"How would you like to evaluate and buy?"** Self-serve trial, pay by card · Guided proof of concept · Through procurement (DPA, security questionnaire, invoice or contract)
     ↳ If not self-serve: "Who signs off on the decision?"
-16. **"Are you comparing NetBird with other products?"** No · Yes
+17. **"Are you comparing NetBird with other products?"** No · Yes
     ↳ If yes: "Which ones?"
 
 #### MSP interview
