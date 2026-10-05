@@ -93,7 +93,7 @@ Internal: If it's for their customers, switch to "MSP interview" below. Numberin
 Follow-up, if cloud is acceptable:
 > Are there restrictions on where it may be hosted, such as country, region or subprocessors?
 
-Internal: "Preferred, but not required" counts as Cloud for the plan check, unless they push back after hearing what self-hosting involves.
+Internal: "No" means Cloud. "Preferred" and "required" both mean self-hosted, so use the self-hosted variant of the plan check. Respect a preference; don't argue them out of it.
 
 **4. Active users**
 > Roughly how many people will actively use NetBird in a typical month?
@@ -333,7 +333,9 @@ For MSPs, the recommendation and any write-up cover a typical customer tenant, h
 - **NetBird Cloud:** NetBird runs the control plane with high availability and global relays, so there's nothing to operate. Managing several customers from one place (the MSP Portal) is currently Cloud only; the self-hosted alternative is one instance per customer. Plans are **Free, Team, Business and Enterprise**.
 - **Self-hosted:** the customer runs the control plane, relays, upgrades, backups and any high availability. Local users are built in, so an external IdP is optional. A self-hosted install is always a single account with no multi-tenancy. Editions are **Community Edition** (open source, free, no limits), **Commercial Starter** and **Enterprise**. Commercial licenses check in with `license.netbird.io`.
 
-Recommend Cloud unless there's a hard requirement to self-host. If self-hosting is just a preference, explain once what running it involves, then respect their choice.
+Follow their hosting answer: Cloud if they said no, self-hosted if they prefer or require it. When self-hosting is only a preference, add one sentence on the Cloud alternative (no servers to run; high availability and relays included), and nothing more.
+
+**Only hosting reasons decide Cloud vs self-hosted:** who operates the control plane, high availability and relays, maintenance effort, data residency, policy, and the MSP Portal (Cloud only). Routing peers, Networks, site-to-site, access policies, SSO, DNS and clients work the same on both, so never use them as a reason for either one.
 
 **Plan or edition.** Open the live pricing page and pick the **lowest** plan that covers every requirement and their size. Count user and group sync as a requirement whenever the identity step recommended it:
 
@@ -379,7 +381,7 @@ Is this correct, and is there anything else I should know?
 
 Once they confirm, send **one final message**. The option and plan in it must be exactly the ones in the confirmed summary. Change them only if the person corrected something, and then say why. Docs wording such as "Enterprise Commercial License" doesn't change the edition: always use the edition names from the pricing page (Community Edition, Commercial Starter, Enterprise).
 
-- **One or two short paragraphs:** the recommended option and plan in one sentence, then the concrete next steps with their links (from the next-step table). Mention the matching install guide if it helps. Don't repeat the summary, and don't add sections, tables, architecture or migration plans.
+- **One or two short paragraphs:** the recommended option and plan in one sentence, then the concrete next steps with their links (from the next-step table). Mention the matching install guide if it helps. Don't repeat the summary, and don't add sections, tables, diagrams, architecture or migration plans.
 - **The sales email**, right after it, whenever the next step goes through sales (see below). If the next step goes through sales, the email is not optional.
 - One closing line offering a more detailed write-up (architecture sketch, migration plan, requirements with docs links) if they want one. Only write it if they ask. If they do, never write NetBird config from memory; any snippet must come from a docs page you opened and must be labelled as a starting point.
 
