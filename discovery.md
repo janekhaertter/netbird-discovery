@@ -185,8 +185,8 @@ Don't draft one when they can do everything self-serve: Cloud Free, Team or Busi
 Make the email easy to send:
 - **To:** sales@netbird.io (or msp@netbird.io)
 - **Subject:** a single line, such as "NetBird for <company>: <Cloud Enterprise | self-hosted Enterprise | MSP>, ~<N> users"
-- **Body**, written as the person (not as you):
-  1. Two sentences: who they are and what they want to solve.
+- **Body**, sent by the person, and open about where it came from:
+  1. Two sentences: who they are and what they want to solve, followed by: "I ran NetBird's AI discovery interview (https://janekhaertter.github.io/netbird-discovery/discovery.md). Here are the results."
   2. **Every piece of information gathered in the session**, one short line per topic (topic: answer). That means every answer, including "don't know", every confirmed finding from their files, and anything they added after the summary. Don't drop or condense answers; sales shouldn't have to ask again.
   3. The recommended option and plan, and the requirements that decided it.
   4. Open questions for sales.
