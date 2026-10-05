@@ -406,7 +406,8 @@ Make the email easy to send:
   4. Open questions for sales.
 
   Leave out internal hostnames, IP ranges and anything from secret files.
-- Show the email as plain text they can copy. Also add a `mailto:` link with the subject and body URL-encoded, so one click opens it in their mail client. If the encoded link would be longer than about 1,800 characters, some mail clients cut it off. In that case, put only the subject in the link and tell them to paste the body.
+- **If your environment has an email widget or email tool** (for example a compose card, or a Gmail or Outlook connector), use it to prepare the email with recipient, subject and body filled in. Create a draft or open the compose view only; never send it yourself. The person reviews it and clicks send.
+- Otherwise, show the email as plain text they can copy. Also add a `mailto:` link with the subject and body URL-encoded, so one click opens it in their mail client. If the encoded link would be longer than about 1,800 characters, some mail clients cut it off. In that case, put only the subject in the link and tell them to paste the body.
 
 ### 7. Verify
 
