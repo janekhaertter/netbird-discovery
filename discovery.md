@@ -87,8 +87,8 @@ You can only adapt the wording when you're confirming something you found in the
 
 Use this instead of the main list once someone says NetBird is for their customers. Same rules apply: same budget, wording as written, skip what's already answered.
 
-1. **Hosting.** Before you ask anything else, tell them: "Managing many customers from one place (the MSP Portal) is currently only available in NetBird Cloud. If you need to self-host, the alternative is a separate self-hosted NetBird instance per customer." Then ask: **"Which would work for you?"** NetBird Cloud with the MSP Portal · One self-hosted instance per customer · It depends on the customer · Neither works for us
-   *If neither works, don't carry on as if nothing happened. Ask what makes self-hosting necessary, record it as the deciding requirement, and point them to msp@netbird.io. Ask the remaining questions only if they still want to continue. For one instance per customer, note that commercial licenses are issued per legal entity.*
+1. **Hosting.** Before you ask anything else, tell them: "Managing many customers from one place (the MSP Portal) is currently only available in NetBird Cloud. If you need to self-host, the alternative is a separate self-hosted NetBird instance per customer." Then ask: **"Which would work for you?"** NetBird Cloud with the MSP Portal · One self-hosted instance per customer · It depends on the customer · We need self-hosted multi-tenant management
+   *If they need self-hosted multi-tenant management, don't carry on as if nothing happened. Tell them: "A self-hosted version of multi-tenant management is coming soon. Contact sales@netbird.io for details and early access." Ask what makes self-hosting necessary, record it as the deciding requirement, and make sales@netbird.io the primary next step, with a sales email. Ask the remaining questions only if they still want to continue. For one instance per customer, note that commercial licenses are issued per legal entity.*
 2. **"How many customers would use NetBird, and how big are they typically?"** Mostly small (1–10 users) · Mostly mid-size (11–50 users) · Mostly larger (more than 50 users) · A mix
    ↳ "Roughly how many customers in total?"
    ↳ "Is it mostly people connecting, or unattended devices such as sites, servers or IoT?"
@@ -141,6 +141,7 @@ Recommend Cloud unless there's a hard requirement to self-host. If self-hosting 
 | Self-hosted Enterprise | sales@netbird.io for an assisted proof of concept | Community Edition meanwhile (migrates in place) |
 | MSP on Cloud | Apply at https://netbird.io/use-cases/msp (needs Team or higher) and email msp@netbird.io | MSP portal docs |
 | MSP, one self-hosted instance per customer | msp@netbird.io (licensing across several instances) | Self-hosted quickstart for a pilot customer |
+| MSP, needs self-hosted multi-tenant management | sales@netbird.io (self-hosted multi-tenant management is coming soon) | Cloud MSP Portal or one instance per customer in the meantime |
 | Requirement not met | Say so plainly; sales@netbird.io if it's a dealbreaker | Closest documented workaround |
 
 ### 5. Confirm
