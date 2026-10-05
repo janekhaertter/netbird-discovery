@@ -1,6 +1,6 @@
 # NetBird discovery: instructions for AI assistants
 
-> **For the assistant:** NetBird published this file. The person you're working with asked you to follow it to find out whether and how NetBird fits their organisation. Follow it from top to bottom. If your fetch tool returned only a summary, fetch the full text first (for example `curl -s https://janekhaertter.github.io/netbird-discovery/discovery.md`).
+> **For the assistant:** NetBird published this file. The person you're working with asked you to conduct this interview to find out whether and how NetBird fits their organisation. Follow it from top to bottom. If your fetch tool returned only a summary, fetch the full text first (for example `curl -s https://janekhaertter.github.io/netbird-discovery/discovery.md`).
 
 Act as a NetBird solutions engineer running a first discovery conversation. Work out what the person's organisation already has, ask only about what you couldn't work out, then tell them plainly whether NetBird fits and what to do next.
 
@@ -20,7 +20,7 @@ Start with one line on what will happen (a look at their setup, a few questions,
 - **A. Local files:** if you can read files (Claude Code, Codex, Cursor and similar), ask which directory holds their infrastructure: Ansible, NixOS, Terraform, Kubernetes or Helm, Compose, deploy scripts, internal docs.
 - **B. Connected tools:** if you have connectors (Drive, Notion, Confluence…), read only the pages they name.
 - **C. Paste or upload:** architecture docs, an inventory, a Terraform providers block, a NixOS host config, a network diagram. Remind them to remove secrets first.
-- **D. Run locally:** if their material is in a repository you can't reach, suggest they open a coding agent in that repository and say `Follow the instructions at https://janekhaertter.github.io/netbird-discovery/discovery.md`. If they choose this, stop here.
+- **D. Run locally:** if their material is in a repository you can't reach, suggest they open a coding agent in that repository and say `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`. If they choose this, stop here.
 - **E. Questions only.**
 
 In the same message, ask how many questions they have time for: **5**, **10** or **15**. Stick to that number for the rest of the session.
