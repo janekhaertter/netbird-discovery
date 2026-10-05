@@ -53,9 +53,9 @@ You can only adapt the wording when you're confirming something you found in the
    *If it's for their customers, stop here and switch to "MSP interview" below. The question budget carries over.*
 3. **"Does NetBird need to run on your own infrastructure?"** No, a managed cloud service is fine · Preferred, but not required · Yes, required (regulation, data residency or policy)
    ↳ If the cloud is acceptable: "Are there restrictions on where it may be hosted, such as country, region or subprocessors?"
-4. **"Roughly how many users?"** 1–5 · 6–50 · More than 50
-   ↳ If self-hosting: "Roughly how many devices?" Up to 500 · More than 500
-   ↳ If more than 50: "About how many of them are active in a typical month?"
+4. **"Roughly how many people will actively use NetBird in a typical month?"** 1–5 · 6–50 · More than 50
+   ↳ If more than 50: "About how many?" (ask plainly, with no ranges)
+   *Ask about active users, not named accounts or devices. Don't make up other ranges.*
 5. **Plan check.** Always ask this, even when the budget is used up, and don't count it towards the budget. These features decide the plan or edition, so never assume the answer. **"Do you need any of these?"** (several allowed)
    - Cloud: Connection logs or SIEM streaming · Only managed or compliant devices (MDM/EDR, posture checks) · Approving new devices before they join · Invoice payment, custom contract or SLA
    - Self-hosted: High availability · Connection logs or SIEM streaming · Only managed or compliant devices (MDM/EDR) · Approving new devices before they join
