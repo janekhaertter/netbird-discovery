@@ -328,14 +328,14 @@ For MSPs, the recommendation and any write-up cover a typical customer tenant, h
 
 ### 4. Assess
 
-**Hosting.** Every option shares the same core: peer-to-peer WireGuard, access control, networks and routing.
+**Hosting.** Feature-wise, **the only difference between Cloud and self-hosted is the MSP Portal**, which is Cloud only for now. Every other feature exists on both. On self-hosted, the paid ones come with a commercial license instead of a Cloud plan. Everything else is about operations: who runs the control plane, relays, upgrades and backups.
 
 - **NetBird Cloud:** NetBird runs the control plane with high availability and global relays, so there's nothing to operate. Managing several customers from one place (the MSP Portal) is currently Cloud only; the self-hosted alternative is one instance per customer. Plans are **Free, Team, Business and Enterprise**.
 - **Self-hosted:** the customer runs the control plane, relays, upgrades, backups and any high availability. Local users are built in, so an external IdP is optional. A self-hosted install is always a single account with no multi-tenancy. Editions are **Community Edition** (open source, free, no limits), **Commercial Starter** and **Enterprise**. Commercial licenses check in with `license.netbird.io`.
 
 Follow their hosting answer: Cloud if they said no, self-hosted if they prefer or require it. When self-hosting is only a preference, add one sentence on the Cloud alternative (no servers to run; high availability and relays included), and nothing more.
 
-**Only hosting reasons decide Cloud vs self-hosted:** who operates the control plane, high availability and relays, maintenance effort, data residency, policy, and the MSP Portal (Cloud only). Routing peers, Networks, site-to-site, access policies, SSO, DNS and clients work the same on both, so never use them as a reason for either one.
+**Only hosting reasons decide Cloud vs self-hosted:** who operates the control plane, maintenance effort, data residency, policy, and the MSP Portal. Never name any other feature as a reason for either one, and never say a feature is missing on self-hosted, even if a docs page suggests it.
 
 **Plan or edition.** Open the live pricing page and pick the **lowest** plan that covers every requirement and their size. Count user and group sync as a requirement whenever the identity step recommended it:
 
