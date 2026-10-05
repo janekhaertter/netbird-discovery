@@ -46,7 +46,7 @@ Skip this step if they chose to start from scratch. Start broad (file tree, READ
 - **Constraints.** Note data residency, compliance frameworks (SOC 2, ISO 27001, HIPAA, PCI, NIS2, DORA, BSI), and SIEMs (Splunk, Datadog, Elastic, Sentinel), since a SIEM implies event streaming.
 - **Existing NetBird.** Look for the NetBird Terraform provider, `community.ansible_netbird`, the Helm chart or operator, `services.netbird`, `NB_SETUP_KEY` or `NB_MANAGEMENT_URL`. A custom management URL means self-hosted; none, or `api.netbird.io`, means Cloud.
 
-Show an evidence table, `fact | confidence | source`, containing only facts that change the recommendation.
+If they shared material, tell them what you found in at most 5 short plain lines, limited to facts that change the recommendation (no table, no confidence ratings). If they didn't share anything, skip this entirely.
 
 ### 3. Interview
 
@@ -57,11 +57,12 @@ Show an evidence table, `fact | confidence | source`, containing only facts that
 - **Ask exactly the text in the quote** and offer exactly the listed answers. **Always translate both the question and the answers into the person's language.** "Exactly" means the same content and meaning, not English text. Keep product names, plan names and tool names (NetBird Cloud, Entra ID, SCIM…) as they are. Don't add prefixes, labels, explanations or extra options. If you have a multiple-choice tool, put the translated answers in it without changing them; it adds a free-text field itself. Without one, list them as a short bulleted list.
 - **Lines marked "Internal:" are for you only.** Never show them, paraphrase them, or mention budgets, slots or rules.
 - **Pick one variant.** Where a question has variants, ask only the one that matches what you already know. Never show more than one.
-- **Show progress** before each question as "Question n/N" (for example "Question 8/10"), where N is their budget. A follow-up shows its parent's number, even when you ask it in a later message, and doesn't use up a slot. Don't add labels such as "(Follow-up)".
+- **Show progress** before each question as "Question n/N", where N is their budget. **n counts the questions you've actually asked (1, 2, 3 …), not the number in this list**, so skipped questions don't create gaps. n never exceeds N; when n reaches N, stop asking. A follow-up shows its parent's n, even in a later message, and doesn't use up a slot. Don't add labels such as "(Follow-up)".
+- **Don't narrate.** Never say what you skip or why, and never mention follow-ups, the plan check, the question list, your evidence or what you're about to do next. Just ask the next question.
 - "Skip if none apply" and "Skip if nothing specific" are part of the question text. Never turn them into an answer option.
-- Ask at most three questions per message. Ask a follow-up in your next message, right after its parent is answered.
+- Ask at most three questions per message. **Never put a follow-up in the same message as its parent**; ask it in your next message, once the parent is answered.
 - Accept "don't know" and record it as an open question. Where an answer contradicts the files, go with the answer.
-- The only wording you may adapt is a confirmation of something from the files: "Your Terraform configures Okta. Is that the identity provider your staff sign in with?" Yes · No, it's something else
+- The only wording you may adapt is a confirmation of something **from their files**: "Your Terraform configures Okta. Is that the identity provider your staff sign in with?" Yes · No, it's something else. Never turn something they said in the chat into a yes/no confirmation. If an answer fully covers a later question, skip that question. If it only partly covers it, ask the question as written.
 
 **1. Existing use**
 > Are you already using NetBird at your organisation?
@@ -84,7 +85,7 @@ Internal: Always ask this first. For existing users, treat the rest of the inter
 - Our own organisation
 - Our customers (we're an MSP, MSSP or reseller)
 
-Internal: If it's for their customers, switch to "MSP interview" below. Numbering and budget carry over.
+Internal: If it's for their customers, your very next question is M1 from "MSP interview" below, including the statement before it. Never ask them questions 3–17. Numbering and budget carry over.
 
 **3. Hosting**
 > Does NetBird need to run on your own infrastructure?
@@ -234,7 +235,7 @@ Follow-up, if yes:
 
 #### MSP interview
 
-Use this instead of questions 3–17 once someone says NetBird is for their customers. The same rules apply.
+Use this instead of questions 3–17 once someone says NetBird is for their customers. The same rules apply. Always start with M1.
 
 **M1. Hosting**
 
@@ -368,13 +369,14 @@ Follow their hosting answer: Cloud if they said no, self-hosted if they prefer o
 
 ### 5. Confirm
 
-Show a summary of **no more than 10 lines**: what you understood about their setup and needs, and the option and plan you'd recommend. Use one short line per point, with no tables or explanations. End with "Is this correct, and is there anything else I should know?", translated like everything else. Wait for the answer. If they correct or add anything, re-check the assessment before you continue. This question doesn't count towards the budget. For example:
+Show a summary of **no more than 10 lines in total, counting the recommendation and the closing question**: what you understood about their setup and needs, and the option and plan you'd recommend. Use one short line per point, with no tables or explanations. Include exactly one line "Assumed: …" listing, in a few words, what you assumed for topics you didn't ask about. End with "Is this correct, and is there anything else I should know?", translated like everything else. Wait for the answer. If they correct or add anything, re-check the assessment before you continue. This question doesn't count towards the budget. For example:
 
 ```
 - Own organisation, ~40 active users, Okta
 - Today: OpenVPN, contract ends in March
 - Needs: SCIM sync, Intune compliance, SIEM streaming
 - Must self-host (data residency)
+- Assumed: no contractors, no source-IP needs
 → Recommendation: self-hosted Enterprise, via sales
 Is this correct, and is there anything else I should know?
 ```
@@ -383,7 +385,7 @@ Is this correct, and is there anything else I should know?
 
 Once they confirm, send **one final message**. The option and plan in it must be exactly the ones in the confirmed summary. Change them only if the person corrected something, and then say why. Docs wording such as "Enterprise Commercial License" doesn't change the edition: always use the edition names from the pricing page (Community Edition, Commercial Starter, Enterprise).
 
-- **One or two short paragraphs:** the recommended option and plan in one sentence, then the concrete next steps with their links (from the next-step table). Mention the matching install guide if it helps. Don't repeat the summary, and don't add sections, tables, diagrams, architecture or migration plans.
+- **Two to four sentences:** the recommended option and plan, then the concrete next steps with their links (from the next-step table). If self-hosting is only their preference, add the one sentence on the Cloud alternative (no servers to run; high availability and relays included). No headings, no repeat of the summary, no explanations of how features work, and no tables, diagrams, architecture or migration plans.
 - **The sales email**, right after it, whenever the next step goes through sales (see below). If the next step goes through sales, the email is not optional.
 - One closing line offering a more detailed write-up (architecture sketch, migration plan, requirements with docs links) if they want one. Only write it if they ask. If they do, never write NetBird config from memory; any snippet must come from a docs page you opened and must be labelled as a starting point.
 
@@ -401,13 +403,13 @@ Make the email easy to send:
 - **Subject:** always exactly `Discovery Skill`, untranslated and with nothing added, so sales can filter for it.
 - **Body**, sent by the person, and open about where it came from:
   1. Two sentences: who they are and what they want to solve, followed by: "I ran NetBird's AI discovery interview (https://janekhaertter.github.io/netbird-discovery/discovery.md). Here are the results."
-  2. **Every piece of information gathered in the session**, one short line per topic (topic: answer). That means every answer, including "don't know", every confirmed finding from their files, and anything they added after the summary. Don't drop or condense answers; sales shouldn't have to ask again.
+  2. **One line per topic, in the order of the question list**, with the topic name in plain words, never internal names such as "plan check". For example "Existing use: …", "Audience: …", "Hosting: …", "Active users: …", "Needed features: …", "Identity provider: …", and so on to "Alternatives: …". For MSPs, use the MSP topics (Hosting, Customers, Current solution, … Timeline). Every answer goes in, including "No", "not needed" and "don't know", along with follow-up answers, confirmed findings from their files, and anything added after the summary. Topics you didn't ask get "not asked".
   3. The recommended option and plan, and the requirements that decided it.
-  4. Open questions for sales.
+  4. Open questions for sales: every "not asked" and "don't know" topic, and anything you couldn't confirm.
 
   Leave out internal hostnames, IP ranges and anything from secret files.
 - **If your environment has an email widget or email tool** (for example a compose card, or a Gmail or Outlook connector), use it to prepare the email with recipient, subject and body filled in. Create a draft or open the compose view only; never send it yourself. The person reviews it and clicks send.
-- Otherwise, show the email as plain text they can copy. Also add a `mailto:` link with the subject and body URL-encoded, so one click opens it in their mail client. If the encoded link would be longer than about 1,800 characters, some mail clients cut it off. In that case, put only the subject in the link and tell them to paste the body.
+- Otherwise, show the email as plain text they can copy, plus a `mailto:` link containing only the recipient and the subject (`mailto:sales@netbird.io?subject=Discovery%20Skill`), and tell them to paste the body. Never put the body in the link.
 
 ### 7. Verify
 
