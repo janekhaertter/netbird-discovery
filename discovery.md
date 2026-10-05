@@ -413,12 +413,14 @@ Don't draft one when they can do everything self-serve: Cloud Free, Team or Busi
 Make the email easy to send:
 - **To:** sales@netbird.io (or msp@netbird.io)
 - **Subject:** always exactly `Discovery Skill`, untranslated and with nothing added, so sales can filter for it.
-- **Before writing the body, go through the conversation topic by topic.** For each topic, look for anything the person said about it, including things they mentioned unprompted, while answering another question, or after the summary. Anything they said counts as answered, so never write "not asked" for it. Never fill a line from memory, inference or an answer option they didn't pick. If an answer was unclear, write "unclear" and list it under open questions.
+- **Build the body by walking through the conversation from start to end.** Don't reorganise it by topic and don't fill anything from memory or inference.
 - **Body**, sent by the person, and open about where it came from:
   1. One or two sentences on who they are and what they want to solve, followed by: "I ran NetBird's AI discovery interview (https://janekhaertter.github.io/netbird-discovery/discovery.md). Here are the results."
-  2. **One line per topic, in the order of the question list**, with the topic name in plain words, never internal names such as "plan check". For example "Existing use: …", "Audience: …", "Hosting: …", "Active users: …", "Needed features: …", "Identity provider: …", and so on to "Alternatives: …". For MSPs, use the MSP topics (Hosting, Customers, Current solution, … Timeline). Every answer goes in, including "No", "not needed" and "don't know", along with follow-up answers, confirmed findings from their files, and anything added after the summary. Topics you didn't ask get "not asked".
+  2. **Questions and answers, in the order they were asked:** each question you asked, in plain words and without "Question n/N", followed by the person's answer as they gave it (including "No", "not needed", "don't know" and follow-up answers). Shorten wording only, never meaning: "nice to have" stays "nice to have". Use the option text they picked, never one they didn't. Then add:
+     - "Also mentioned: …" for anything they said unprompted, from their files, or after the summary
+     - "Not asked: …" for the topics from the question list you didn't get to, in a few words
   3. The recommended option and plan, and the requirements that decided it.
-  4. Open questions for sales: every "not asked" and "don't know" topic, and anything you couldn't confirm.
+  4. Open questions for sales: the "Not asked" topics, every "don't know", and anything you couldn't confirm.
 
   Leave out internal hostnames, IP ranges and anything from secret files.
 - **If your environment has an email widget or email tool** (for example a compose card, or a Gmail or Outlook connector), use it to prepare the email with recipient, subject and body filled in. Create a draft or open the compose view only; never send it yourself. The person reviews it and clicks send.
