@@ -269,42 +269,29 @@ Follow-up:
 - Only the dashboard
 - Both
 
-**M5. Billing**
-> Who pays for NetBird?
-- We pay and rebill our customers
-- Customers pay directly
-- It's bundled into our managed-service fee
-
-Follow-up:
-> Do you need usage per customer for rebilling, or billing integration with a PSA (for example ConnectWise, Autotask)?
-- Usage per customer
-- PSA integration
-- Both
-- Neither
-
-**M6. Tools** (several answers allowed)
+**M5. Tools** (several answers allowed)
 > Which tools does NetBird need to fit into?
 - RMM (for example NinjaOne, Datto, Acronis)
 - PSA (for example ConnectWise, Autotask)
 - MDM or EDR
 - Customers' identity providers
 
-**M7. Migration**
+**M6. Migration**
 > Do existing customers need to be migrated?
 - No, only new customers
 - Yes, from another VPN
 - Yes, existing NetBird accounts
 
-**M8. Own use**
+**M7. Own use**
 > Do you also want to use NetBird for your own internal network?
 - Yes
 - No
 - Later
 
-**M9. Must-haves**
+**M8. Must-haves**
 > Is there anything NetBird must be able to do for it to be an option for you or your customers?
 
-**M10. White-labelling**
+**M9. White-labelling**
 > Do you need white-labelling, or a level of partners or resellers below you?
 - No
 - White-labelling
@@ -313,14 +300,14 @@ Follow-up:
 
 Internal: Check the MSP portal docs. If it isn't documented, treat it as an open question for msp@netbird.io and don't promise it.
 
-**M11. Timeline**
+**M10. Timeline**
 > When do you want to onboard the first customer?
 - Within a month
 - Within 3 months
 - Later this year
 - Just exploring
 
-For MSPs, the recommendation and any write-up cover a typical customer tenant, how technicians reach tenants, and the billing model, instead of a single network. Facts to use: an MSP account needs a Team plan or higher, and you apply at https://netbird.io/use-cases/msp. New tenants get a 14-day free trial, the MSP account can also run the MSP's own network, and billing counts active users and machines. The next step is always msp@netbird.io.
+For MSPs, the recommendation and any write-up cover a typical customer tenant, how technicians reach tenants, and the billing model, instead of a single network. Facts to use: an MSP account needs a Team plan or higher, and you apply at https://netbird.io/use-cases/msp. New tenants get a 14-day free trial, the MSP account can also run the MSP's own network, and billing counts active users and machines. Billing is NetBird's model, not something to ask the MSP about. The next step is always msp@netbird.io.
 
 ### 4. Assess
 
