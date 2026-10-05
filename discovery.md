@@ -57,25 +57,27 @@ Show an evidence table, `fact | confidence | source`, containing only facts that
 - **Ask exactly the text in the quote** and offer exactly the listed answers. **Always translate both the question and the answers into the person's language.** "Exactly" means the same content and meaning, not English text. Keep product names, plan names and tool names (NetBird Cloud, Entra ID, SCIM…) as they are. Don't add prefixes, labels, explanations or extra options. If you have a multiple-choice tool, put the translated answers in it without changing them; it adds a free-text field itself. Without one, list them as a short bulleted list.
 - **Lines marked "Internal:" are for you only.** Never show them, paraphrase them, or mention budgets, slots or rules.
 - **Pick one variant.** Where a question has variants, ask only the one that matches what you already know. Never show more than one.
-- **Show progress** before each question as "Question n/N" (for example "Question 8/10"), where N is their budget. A follow-up keeps its parent's number.
+- **Show progress** before each question as "Question n/N" (for example "Question 8/10"), where N is their budget. A follow-up shows its parent's number, even when you ask it in a later message, and doesn't use up a slot. Don't add labels such as "(Follow-up)".
+- "Skip if none apply" and "Skip if nothing specific" are part of the question text. Never turn them into an answer option.
 - Ask at most three questions per message. Ask a follow-up in your next message, right after its parent is answered.
 - Accept "don't know" and record it as an open question. Where an answer contradicts the files, go with the answer.
 - The only wording you may adapt is a confirmation of something from the files: "Your Terraform configures Okta. Is that the identity provider your staff sign in with?" Yes · No, it's something else
 
 **1. Existing use**
-> Are you already using NetBird?
+> Are you already using NetBird at your organisation?
 - No
 - Yes, NetBird Cloud
 - Yes, self-hosted
+- Only privately, for example in my homelab
 
-Follow-up, if yes (several answers allowed):
+Follow-up, only if "Yes, NetBird Cloud" or "Yes, self-hosted" (several answers allowed):
 > What's missing that brought you here? Skip if nothing specific.
 - User and group sync (SCIM)
 - Audit or traffic logs
 - Device compliance (MDM/EDR) or device approval
 - High availability
 
-Internal: Always ask this first. For existing users, treat the rest of the interview as an upgrade check focused on the gap.
+Internal: Always ask this first. For existing users, treat the rest of the interview as an upgrade check focused on the gap. Private or homelab use counts as "No" for the organisation: skip the follow-up and run a normal new evaluation. The only difference is that you don't need to explain NetBird basics.
 
 **2. Audience**
 > Is NetBird for your own organisation, or for your customers?
