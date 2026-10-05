@@ -78,7 +78,7 @@ You can only adapt the wording when you're confirming something you found in the
     *If yes, check the docs on masquerading and routing before you recommend a network design.*
 15. **"When do you want to be up and running?"** Within a month · Within 3 months · Later this year · Just exploring
     ↳ "Is there a renewal or audit deadline?"
-16. **"How would you like to evaluate and buy?"** Self-serve trial, pay by card · Guided proof of concept · Through procurement (DPA, security questionnaire, invoice or contract)
+16. **"How would you like to evaluate and buy?"** Try it myself (14-day free trial, no card required) · Guided proof of concept · Through procurement (DPA, security questionnaire, invoice or contract)
     ↳ If not self-serve: "Who signs off on the decision?"
 17. **"Are you comparing NetBird with other products?"** No · Yes
     ↳ If yes: "Which ones?"
@@ -133,9 +133,9 @@ Recommend Cloud unless there's a hard requirement to self-host. If self-hosting 
 |---|---|---|
 | Already on Cloud, needs more features | Upgrade the existing account at https://app.netbird.io to the lowest plan that covers the gap. Peers and configuration stay, so there's no need to start over | sales@netbird.io for procurement or Enterprise |
 | Already on Community Edition, needs commercial features | Add a commercial license to the existing install (upgrades in place): Commercial Starter at https://licensing.netbird.io, or Enterprise via sales@netbird.io | High-availability docs |
-| Cloud Free, Team or Business, up to 50 users | Sign up at https://app.netbird.io (paid plans start as a trial) | Quickstart and install guide for their tooling |
-| Cloud, more than 50 users | sales@netbird.io | A Team or Business trial in parallel |
-| Cloud Enterprise, procurement needs, large rollout | sales@netbird.io | A Team or Business trial in parallel |
+| Cloud Free, Team or Business, up to 50 users | Sign up at https://app.netbird.io (Team and Business: 14-day free trial, no card required) | Quickstart and install guide for their tooling |
+| Cloud, more than 50 users | sales@netbird.io | A 14-day free Team or Business trial in parallel (no card required) |
+| Cloud Enterprise, procurement needs, large rollout | sales@netbird.io | A 14-day free Team or Business trial in parallel (no card required) |
 | Self-hosted Community Edition | Self-hosted quickstart | Ansible collection or Terraform provider |
 | Self-hosted Commercial Starter | Community Edition now, then a license from https://licensing.netbird.io (upgrades in place) | High-availability docs |
 | Self-hosted Enterprise | sales@netbird.io for an assisted proof of concept | Community Edition meanwhile (migrates in place) |
