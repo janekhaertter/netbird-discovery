@@ -147,7 +147,7 @@ Recommend Cloud unless there's a hard requirement to self-host. If self-hosting 
 
 ### 5. Report
 
-**Confirm first.** Before writing the report, show a summary of **no more than 10 lines**: what you understood about their setup and needs, and the option and plan you'd recommend. Use one short line per point. Don't use tables or explanations. End with "Is this correct?" Wait for the answer, and if they correct anything, re-check the assessment before you continue. For example:
+**Confirm first.** Before writing the report, show a summary of **no more than 10 lines**: what you understood about their setup and needs, and the option and plan you'd recommend. Use one short line per point. Don't use tables or explanations. End with "Is this correct, and is there anything else I should know?" Wait for the answer. If they correct or add anything, re-check the assessment before you continue. This question doesn't count towards the budget. For example:
 
 ```
 - 40 users, ~120 devices, Okta, own organisation
@@ -155,7 +155,7 @@ Recommend Cloud unless there's a hard requirement to self-host. If self-hosting 
 - Needs: SCIM sync, Intune compliance, SIEM streaming
 - Must self-host (data residency)
 → Recommendation: self-hosted Enterprise, via sales
-Is this correct?
+Is this correct, and is there anything else I should know?
 ```
 
 Once they confirm, present the full report in the conversation with these sections:
