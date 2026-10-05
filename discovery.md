@@ -44,7 +44,7 @@ Show an evidence table, `fact | confidence | source`, containing only facts that
 
 **How to ask.**
 - **Every question needs a way to say no.** Single-choice questions already have a "No" or "not needed" answer. For multi-select questions, "Skip if none apply" is part of the question text. Never drop those answers, and never add a fifth one: many multiple-choice tools only show four.
-- **Ask exactly the text in the quote** and offer exactly the listed answers, translated into the person's language. Don't add prefixes, labels, explanations or extra options. If you have a multiple-choice tool, put the answers in it as they are; it adds a free-text field itself. Without one, list them as a short bulleted list.
+- **Ask exactly the text in the quote** and offer exactly the listed answers. **Always translate both the question and the answers into the person's language.** "Exactly" means the same content and meaning, not English text. Keep product names, plan names and tool names (NetBird Cloud, Entra ID, SCIM…) as they are. Don't add prefixes, labels, explanations or extra options. If you have a multiple-choice tool, put the translated answers in it without changing them; it adds a free-text field itself. Without one, list them as a short bulleted list.
 - **Lines marked "Internal:" are for you only.** Never show them, paraphrase them, or mention budgets, slots or rules.
 - **Pick one variant.** Where a question has variants, ask only the one that matches what you already know. Never show more than one.
 - **Show progress** before each question as "Question n/N" (for example "Question 8/10"), where N is their budget. A follow-up keeps its parent's number.
