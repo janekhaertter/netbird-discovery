@@ -134,7 +134,10 @@ Follow-up, if they use one:
 > Which MDM or EDR do you use?
 
 **8. Must-haves**
-> Is there anything NetBird must be able to do for it to be an option for you?
+> Are there any must-haves we haven't covered yet?
+- No, nothing else
+
+Internal: Anything else comes in as free text. Record each must-have as a deciding requirement and check it against the docs.
 
 **9. Topology** (several answers allowed)
 > What needs to connect?
@@ -290,7 +293,10 @@ Follow-up:
 - Later
 
 **M8. Must-haves**
-> Is there anything NetBird must be able to do for it to be an option for you or your customers?
+> Are there any must-haves for you or your customers that we haven't covered yet?
+- No, nothing else
+
+Internal: Anything else comes in as free text. Record each must-have as a deciding requirement and check it against the docs.
 
 **M9. White-labelling**
 > Do you need white-labelling, or a level of partners or resellers below you?
