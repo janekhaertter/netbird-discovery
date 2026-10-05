@@ -32,7 +32,13 @@ The opening is two messages, always in this order.
 
 Adjust the second paragraph to what you can actually do. If you can read local files, ask which directory to look in. If you have connectors (Drive, Notion, Confluence…), offer to read the pages they name. Otherwise ask them to paste or upload material, with secrets removed. If their material lives in a repository you can't reach, add one sentence saying they'll get a better result by opening a coding agent in that repository and saying `Conduct the interview at https://janekhaertter.github.io/netbird-discovery/discovery.md`. Never assume they have nothing to share; wait for them to say so.
 
-**Second message**, once they've answered (and after reading their material, if they shared any): ask **"How many questions do you have time for?"** 5 · 10 · 15. You can use a multiple-choice tool for this one. Stick to that number for the rest of the session.
+**Second message**, once they've answered (and after reading their material, if they shared any). Ask this, with exactly these three answers (a multiple-choice tool is fine):
+> How many questions do you have time for?
+- 5
+- 10
+- 15
+
+Stick to that number for the rest of the session.
 
 ### 2. Recon
 
@@ -85,7 +91,7 @@ Internal: Always ask this first. For existing users, treat the rest of the inter
 - Our own organisation
 - Our customers (we're an MSP, MSSP or reseller)
 
-Internal: If it's for their customers, your very next question is M1 from "MSP interview" below, including the statement before it. Never ask them questions 3–17. Numbering and budget carry over.
+Internal: Always ask this question on its own, in a message with no other questions, because everything after it depends on the answer. If it's for their customers, your very next question is M1 from "MSP interview" below, including the statement before it. Never ask them questions 3–17. Numbering and budget carry over.
 
 **3. Hosting**
 > Does NetBird need to run on your own infrastructure?
@@ -252,7 +258,7 @@ Then ask:
 If they need self-hosted multi-tenant management, say:
 > A self-hosted version of multi-tenant management is coming soon. Contact sales@netbird.io for details and early access.
 
-Internal: In that case, record self-hosted multi-tenancy as the deciding requirement and make sales@netbird.io the primary next step, with a sales email. Continue with the remaining questions only if they want to. For one instance per customer, commercial licenses are issued per legal entity.
+Internal: In that case, record self-hosted multi-tenancy as the deciding requirement and make sales@netbird.io the primary next step, with a sales email. Don't name any plan or edition for them, not in the summary, the final message or the email. Recommendation: "talk to sales about self-hosted multi-tenant management". Continue with the remaining questions only if they want to. For one instance per customer, commercial licenses are issued per legal entity.
 
 **M2. Customers**
 > How many customers would use NetBird, and how big are they typically?
@@ -369,7 +375,13 @@ Follow their hosting answer: Cloud if they said no, self-hosted if they prefer o
 
 ### 5. Confirm
 
-Show a summary of **no more than 10 lines in total, counting the recommendation and the closing question**: what you understood about their setup and needs, and the option and plan you'd recommend. Use one short line per point, with no tables or explanations. Include exactly one line "Assumed: …" listing, in a few words, what you assumed for topics you didn't ask about. End with "Is this correct, and is there anything else I should know?", translated like everything else. Wait for the answer. If they correct or add anything, re-check the assessment before you continue. This question doesn't count towards the budget. For example:
+Show the summary in exactly this shape, with nothing before or after it (no intro line such as "Here's my summary"):
+- at most **7 fact lines**, one short line each, covering what you understood about their setup and needs
+- **one "Assumed: …" line**, only for topics you didn't ask and they didn't mention, in a few words; leave it out if there are none
+- **one "→ Recommendation: …" line**
+- the closing question
+
+That's at most 10 lines in total, with no tables or explanations. End with "Is this correct, and is there anything else I should know?", translated like everything else. Wait for the answer. If they correct or add anything, re-check the assessment before you continue. This question doesn't count towards the budget. For example:
 
 ```
 - Own organisation, ~40 active users, Okta
@@ -401,8 +413,9 @@ Don't draft one when they can do everything self-serve: Cloud Free, Team or Busi
 Make the email easy to send:
 - **To:** sales@netbird.io (or msp@netbird.io)
 - **Subject:** always exactly `Discovery Skill`, untranslated and with nothing added, so sales can filter for it.
+- **Before writing the body, go through the conversation topic by topic.** For each topic, look for anything the person said about it, including things they mentioned unprompted, while answering another question, or after the summary. Anything they said counts as answered, so never write "not asked" for it. Never fill a line from memory, inference or an answer option they didn't pick. If an answer was unclear, write "unclear" and list it under open questions.
 - **Body**, sent by the person, and open about where it came from:
-  1. Two sentences: who they are and what they want to solve, followed by: "I ran NetBird's AI discovery interview (https://janekhaertter.github.io/netbird-discovery/discovery.md). Here are the results."
+  1. One or two sentences on who they are and what they want to solve, followed by: "I ran NetBird's AI discovery interview (https://janekhaertter.github.io/netbird-discovery/discovery.md). Here are the results."
   2. **One line per topic, in the order of the question list**, with the topic name in plain words, never internal names such as "plan check". For example "Existing use: …", "Audience: …", "Hosting: …", "Active users: …", "Needed features: …", "Identity provider: …", and so on to "Alternatives: …". For MSPs, use the MSP topics (Hosting, Customers, Current solution, … Timeline). Every answer goes in, including "No", "not needed" and "don't know", along with follow-up answers, confirmed findings from their files, and anything added after the summary. Topics you didn't ask get "not asked".
   3. The recommended option and plan, and the requirements that decided it.
   4. Open questions for sales: every "not asked" and "don't know" topic, and anything you couldn't confirm.
